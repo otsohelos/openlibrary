@@ -1,20 +1,34 @@
 const axios = require('axios')
+const express = require('express')
+const app = express()
 const bookRouter = require('express').Router()
+const cors = require('cors')
+
+
+
+app.use(cors())
+app.use(express.json())
+
 
 const http = require('http')
-const baseUrl = "https://openlibrary.org/books/OL7353617M.json"
+const baseUrl = "https://openlibrary.org/books/OL7353617M"
 
-
-const app = http.createServer((request, response) => {
-    axios.get(`${baseUrl}`).then(res => console.log(res.data))
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.end('Hello World')
+bookRouter.get('/', async (request, response) => {
+    const books = await axios.get(`${baseUrl}`)
+    if (books) {
+        response.json(books.data)
+    } else {
+        response.status(404).end()
+      }
 })
 
-commentsRouter.get('/', async (request, response) => {
-    const books = await axios.get(`${baseUrl}`)
-    response.json(comments.map(comm => comm.toJSON()))
-  })
+
+
+app.use('/api/books', bookRouter)
+
+app.get('/', (req, res) => {
+    res.send('<h1>Hello World!</h1>')
+})
 
 const PORT = 3001
 app.listen(PORT)
