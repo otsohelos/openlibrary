@@ -1,9 +1,7 @@
+import booksService from '../services/books'
 
-const initialState = {
-    data: { publishers: "initialpub" }
-}
 
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (state = null, action) => {
     console.log(action)
 
     switch (action.type) {
@@ -19,11 +17,22 @@ export const initSearch = () => {
 
     const toDispatch = {
         type: 'INIT_SEARCH',
-        data: { publishers: "askjh" }
+        data: null
     }
     console.log(toDispatch)
     return async dispatch => {
         dispatch(toDispatch)
+    }
+}
+
+export const performSearch = (keyword) => {
+    return async dispatch => {
+        console.log('dispatch')
+        const foundBooks = await booksService.findByKeyword(keyword)
+        dispatch({
+            type: 'INIT_SEARCH',
+            data: foundBooks
+        })
     }
 }
 

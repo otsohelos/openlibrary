@@ -11,9 +11,11 @@ const Books = () => {
         dispatch(initSearch())
     }, [dispatch])
 
-    const booksToDisplay = (books === undefined) ? 'undefined' : `${books.publishers}`
+    const booksToDisplay = (books === undefined) ? 'undefined' 
+    : (books === null) ? <p>search for books</p> : books.map(book => <p>{book.title}</p>)
+    console.log('books', books)
     return (
-        <p>Hello Underworld
+        <p>Hello World
             <br />
             {booksToDisplay}
         </p>
