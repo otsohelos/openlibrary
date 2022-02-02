@@ -4,7 +4,7 @@ const baseUrl = 'http://localhost:3001/api/books'
 
 const findByKeyword = async (keyword) => {
   const res = await axios.get(`${baseUrl}/${keyword}`)
-  console.log(res.data)
+  // console.log(res.data)
   return res.data
 }
 

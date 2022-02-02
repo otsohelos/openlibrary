@@ -2,7 +2,7 @@ import booksService from '../services/books'
 
 
 const booksReducer = (state = null, action) => {
-    console.log(action)
+    // console.log(action)
 
     switch (action.type) {
         default:

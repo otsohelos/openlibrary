@@ -25,8 +25,8 @@ bookRouter.get('/', async (request, response) => {
 
 bookRouter.get('/:keyword', async (request, response) => {
     const keyword = request.params.keyword
-    console.log('keyword: ', keyword)
-    console.log('address: ', `${searchUrl}${keyword}`)
+    // console.log('keyword: ', keyword)
+    // console.log('address: ', `${searchUrl}${keyword}`)
     const books = await axios.get(`${searchUrl}${keyword}`)
 
     if (books) {
