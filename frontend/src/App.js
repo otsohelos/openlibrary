@@ -18,19 +18,19 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Books />
         <div className='field-box'>
           <h2>Search</h2>
           <form onSubmit={doSearch}>
             <input
-            type="text"
-            value={keywords}
-            name="Keywords"
-            onChange={({ target }) => setKeywords(target.value)}
-          />            <br />
+              type="text"
+              value={keywords}
+              name="Keywords"
+              onChange={({ target }) => setKeywords(target.value)}
+            />            <br />
             <button type='submit' className='submit-button'>Search</button>
           </form>
         </div>
+        <Books />
       </header >
     </div >
   );

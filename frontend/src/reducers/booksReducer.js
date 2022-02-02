@@ -13,13 +13,10 @@ const booksReducer = (state = null, action) => {
 }
 
 export const initSearch = () => {
-    console.log("hey!")
-
     const toDispatch = {
         type: 'INIT_SEARCH',
         data: null
     }
-    console.log(toDispatch)
     return async dispatch => {
         dispatch(toDispatch)
     }
@@ -27,7 +24,6 @@ export const initSearch = () => {
 
 export const performSearch = (keyword) => {
     return async dispatch => {
-        console.log('dispatch')
         const foundBooks = await booksService.findByKeyword(keyword)
         dispatch({
             type: 'INIT_SEARCH',

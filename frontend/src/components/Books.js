@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import bookService from '../services/books'
 import { initSearch } from '../reducers/booksReducer'
 import Book from './Book'
 
@@ -12,13 +11,13 @@ const Books = () => {
         dispatch(initSearch())
     }, [dispatch])
 
-    const booksToDisplay = (books === undefined) ? 'undefined' 
-    : (books === null) ? <p>search for books</p> : books.map(book => <Book book={book} />)
+    const booksToDisplay = (books === undefined) ? 'No books found' 
+    : (books === null) ? <p>search for books</p> : books.map(book => <Book book={book} key={book.key} />)
     return (
-        <p>Hello World
+        <div>
             <br />
             {booksToDisplay}
-        </p>
+        </div>
     )
 
 }
