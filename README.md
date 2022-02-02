@@ -16,6 +16,8 @@ Developed on Node/React by Otso Helos, 2022
 
 * Run `npm start`
 
+* backend should run on port 3001
+
 
 ### Starting frontend
 
@@ -24,3 +26,5 @@ Developed on Node/React by Otso Helos, 2022
 * Run `npm install`
 
 * Run `npm start`
+
+* frontend should run on port 3000
