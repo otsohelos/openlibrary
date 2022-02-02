@@ -11,8 +11,9 @@ const Books = () => {
         dispatch(initSearch())
     }, [dispatch])
 
-    const booksToDisplay = (books === undefined) ? 'No books found' 
-    : (books === null) ? <p>search for books</p> : books.map(book => <Book book={book} key={book.key} />)
+    const booksToDisplay = (books === undefined) ? 'No books found'
+        : (books === null) ? <p>search for books</p> : (
+            books.map(book => <Book book={book} key={book.key} />))
     return (
         <div>
             <br />

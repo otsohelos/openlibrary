@@ -1,5 +1,13 @@
-.App {
+.app {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -13,19 +21,28 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.book-listing {
+  font-size: 16px;
+  width: 95%;
 }
 
-.App-link {
-  color: #61dafb;
+.book-cover-thumbnail {
+  width: 100px;
+}
+
+.book-title {
+  width: 55%;
+  text-align: left;
+}
+
+.book-author {
+  text-align: left;
+  width: 25%;
+}
+
+.book-item {
+  height: 80px;
 }
 
 @keyframes App-logo-spin {

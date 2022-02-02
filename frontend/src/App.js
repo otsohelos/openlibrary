@@ -16,8 +16,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
         <div className='field-box'>
           <h2>Search</h2>
           <form onSubmit={doSearch}>
@@ -31,7 +30,6 @@ const App = () => {
           </form>
         </div>
         <Books />
-      </header >
     </div >
   );
 }
